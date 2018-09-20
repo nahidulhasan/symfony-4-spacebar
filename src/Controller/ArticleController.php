@@ -3,10 +3,11 @@ namespace App\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
 
-class ArticleController
+class ArticleController extends abstractController
 {
 
     /**
@@ -20,13 +21,14 @@ class ArticleController
 
 
     /**
-     * This dufd fdfjf
      * @Route("/news/{slug}")
-     *
      */
     public function show($slug)
     {
-        return new Response(sprintf('Future page show the article: %s', $slug));
+        return $this->render('article/show.html.twig',[
+            'tittle' => ucwords(str_replace('_', ' ', $slug))
+        ]);
+
     }
 
 }
