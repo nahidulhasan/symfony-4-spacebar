@@ -20,7 +20,9 @@ class ArticleController
 
 
     /**
+     * This dufd fdfjf
      * @Route("/news/{slug}")
+     *
      */
     public function show($slug)
     {
